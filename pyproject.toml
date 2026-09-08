@@ -1,0 +1,74 @@
+[project]
+name = "paperpilot"
+version = "0.1.0"
+description = "An AI research assistant that lets you chat with your papers and flags claims superseded by newer research."
+readme = "README.md"
+requires-python = ">=3.12"
+license = { text = "MIT" }
+authors = [{ name = "Manoj Gujare" }]
+keywords = ["rag", "langgraph", "research-papers", "streamlit", "qdrant"]
+
+dependencies = [
+    "beautifulsoup4>=4.14.3",
+    "langchain-classic>=1.0.7",
+    "langchain-community>=0.4.1",
+    "langchain-core>=1.3.3",
+    "langchain-openai>=1.2.1",
+    "langchain-qdrant>=1.1.0",
+    "langchain-text-splitters>=1.1.2",
+    "langgraph>=1.1.10",
+    "langgraph-checkpoint-sqlite>=3.0.3",
+    "lxml>=6.1.0",
+    "pydantic>=2.13.4",
+    "pydantic-settings>=2.7.0",
+    "pymupdf>=1.27.2.3",
+    "pypdf>=6.10.2",
+    "python-dotenv>=1.2.2",
+    "qdrant-client>=1.17.1",
+    "streamlit>=1.57.0",
+    "tavily-python>=0.7.24",
+]
+
+[project.optional-dependencies]
+evaluation = [
+    "deepeval>=4.0.0",
+    "langsmith>=0.8.3",
+]
+
+[project.urls]
+Repository = "https://github.com/Manoj-Gujare/PaperPilot"
+
+[project.scripts]
+paperpilot-eval = "evaluation.run_evaluation:main"
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3.4",
+    "pytest-cov>=6.0.0",
+    "ruff>=0.9.0",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/paperpilot", "evaluation"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py312"
+src = ["src", "tests", "evaluation"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "C4", "RUF"]
+ignore = ["B008", "RUF012"]
+
+[tool.ruff.lint.isort]
+known-first-party = ["paperpilot", "evaluation"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]
+addopts = "-q --strict-markers"
+markers = ["integration: tests that call external services"]
