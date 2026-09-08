@@ -216,3 +216,12 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# ── PaperPilot ───────────────────────────────────────────────────────────────
+data/
+embedding_cache/
+*.db
+*.db-shm
+*.db-wal
+.deepeval/
+eval_results.json
