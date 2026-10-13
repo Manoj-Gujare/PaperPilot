@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from langchain_core.messages import AIMessage, HumanMessage
 
-from paperpilot.graph import routing
+from src.graph import routing
 
 
 def state(**overrides):

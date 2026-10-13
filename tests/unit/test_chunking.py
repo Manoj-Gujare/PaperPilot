@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from langchain_core.documents import Document
 
-from paperpilot.ingestion.chunking import (
+from src.ingestion.chunking import (
     get_markdown_splitter,
     get_text_splitter,
     reset_splitter_cache,

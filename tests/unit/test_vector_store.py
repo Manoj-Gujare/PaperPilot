@@ -5,9 +5,9 @@ from __future__ import annotations
 import pytest
 from langchain_core.documents import Document
 
-from paperpilot.core.exceptions import VectorStoreError
-from paperpilot.retrieval import vector_store
-from paperpilot.retrieval.vector_store import PaperRepository, collection_name_for
+from src.core.exceptions import VectorStoreError
+from src.retrieval import vector_store
+from src.retrieval.vector_store import PaperRepository, collection_name_for
 
 SESSION = "3f2b1a44-5c6d-7e8f-9012-3456789abcde"
 

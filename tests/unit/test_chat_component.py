@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.ui.components import chat
+from src.ui.components import chat
 
 
 class FakePlaceholder:

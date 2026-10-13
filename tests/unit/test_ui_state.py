@@ -9,9 +9,9 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.services.session_store import SessionMeta, SessionStore
-from paperpilot.ui import state as ui_state
-from paperpilot.ui.state import AppState
+from src.services.session_store import SessionMeta, SessionStore
+from src.ui import state as ui_state
+from src.ui.state import AppState
 
 
 class FakeStreamlit:

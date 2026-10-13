@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import json
 
-from paperpilot.services.session_store import SessionMeta, SessionStore
+from src.services.session_store import SessionMeta, SessionStore
 
 
 def test_new_sessions_get_a_unique_id():

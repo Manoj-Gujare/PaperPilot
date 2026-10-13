@@ -70,7 +70,7 @@ docker run --rm -p 8501:8501 --env-file .env paperpilot
 
 ## Configuration
 
-Every setting is declared in `src/paperpilot/config/settings.py` and can be overridden through the
+Every setting is declared in `src/config/settings.py` and can be overridden through the
 environment or `.env`. Four values are required:
 
 | Variable | Purpose | Where to get it |
@@ -91,7 +91,7 @@ level, or a chunk overlap wider than the chunk size all raise before the app ser
 ## How it works
 
 ```
-src/paperpilot/
+src/
 ├── config/       Validated settings, loaded once from the environment
 ├── core/         Exception hierarchy, logging, structured-output schemas
 ├── llm/          Chat and embedding models, with a file-backed embedding cache
@@ -127,7 +127,7 @@ workflow depends on.
 uv run ruff check .          # lint
 uv run ruff format .         # format
 uv run pytest                # unit suite, runs offline
-uv run pytest --cov=paperpilot
+uv run pytest --cov=src
 ```
 
 CI runs lint, a format check and the tests on every pull request against `main`.

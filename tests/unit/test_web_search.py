@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.core.exceptions import WebSearchError
-from paperpilot.retrieval.web_search import WebSearchClient, WebSearchResult
+from src.core.exceptions import WebSearchError
+from src.retrieval.web_search import WebSearchClient, WebSearchResult
 
 
 class FakeTavily:

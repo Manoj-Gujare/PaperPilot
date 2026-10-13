@@ -11,14 +11,14 @@ retrieval and models, and everything on configuration and core. Nothing lower re
 
 | Layer | Package | Responsibility |
 |---|---|---|
-| Configuration | `paperpilot.config` | One validated settings object, read from the environment |
-| Core | `paperpilot.core` | Errors, logging, structured-output schemas |
-| Models | `paperpilot.llm` | Chat and embedding clients |
-| Ingestion | `paperpilot.ingestion` | Sources in, chunks out |
-| Retrieval | `paperpilot.retrieval` | Context out — from stored papers or the live web |
-| Workflow | `paperpilot.graph` | The decision graph that answers a question |
-| Services | `paperpilot.services` | Orchestration, session metadata, the `/btw` channel |
-| Interface | `paperpilot.ui` | Streamlit composition and components |
+| Configuration | `src.config` | One validated settings object, read from the environment |
+| Core | `src.core` | Errors, logging, structured-output schemas |
+| Models | `src.llm` | Chat and embedding clients |
+| Ingestion | `src.ingestion` | Sources in, chunks out |
+| Retrieval | `src.retrieval` | Context out — from stored papers or the live web |
+| Workflow | `src.graph` | The decision graph that answers a question |
+| Services | `src.services` | Orchestration, session metadata, the `/btw` channel |
+| Interface | `src.ui` | Streamlit composition and components |
 
 ---
 

@@ -5,7 +5,7 @@ from __future__ import annotations
 from langchain_core.documents import Document
 from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
 
-from paperpilot.services.chat_service import ChatService, serialise_state
+from src.services.chat_service import ChatService, serialise_state
 
 
 class FakeGraph:

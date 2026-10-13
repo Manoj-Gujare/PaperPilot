@@ -5,7 +5,7 @@ from __future__ import annotations
 import pytest
 from pydantic import ValidationError
 
-from paperpilot.config.settings import Settings, get_settings
+from src.config.settings import Settings, get_settings
 
 
 def test_settings_read_credentials_from_environment(settings):

@@ -4,9 +4,9 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.core.exceptions import WebSearchError
-from paperpilot.retrieval.web_search import WebSearchResult
-from paperpilot.services import side_channel
+from src.core.exceptions import WebSearchError
+from src.retrieval.web_search import WebSearchResult
+from src.services import side_channel
 
 
 @pytest.mark.parametrize(

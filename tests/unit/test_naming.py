@@ -2,7 +2,7 @@
 
 from __future__ import annotations
 
-from paperpilot.services import naming
+from src.services import naming
 
 
 class FakeModel:

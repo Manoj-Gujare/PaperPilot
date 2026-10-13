@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.core.exceptions import DocumentLoadError
-from paperpilot.ingestion import arxiv
+from src.core.exceptions import DocumentLoadError
+from src.ingestion import arxiv
 
 ATOM_FEED = """
 <feed>
