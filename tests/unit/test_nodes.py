@@ -5,16 +5,16 @@ from __future__ import annotations
 from langchain_core.documents import Document
 from langchain_core.messages import HumanMessage
 
-from paperpilot.core.exceptions import WebSearchError
-from paperpilot.core.schemas import (
+from src.core.exceptions import WebSearchError
+from src.core.schemas import (
     ClaimVerificationResult,
     RelevancyDecision,
     RouterDecision,
     SupersedingPaper,
 )
-from paperpilot.graph.nodes import answer as answer_node
-from paperpilot.graph.nodes import relevancy, rewrite, router, verification
-from paperpilot.retrieval.web_search import WebSearchResult
+from src.graph.nodes import answer as answer_node
+from src.graph.nodes import relevancy, rewrite, router, verification
+from src.retrieval.web_search import WebSearchResult
 
 
 def structured(value):

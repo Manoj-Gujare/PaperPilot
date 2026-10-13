@@ -4,8 +4,8 @@ from __future__ import annotations
 
 import pytest
 
-from paperpilot.core.exceptions import DocumentLoadError, UnsupportedSourceError
-from paperpilot.ingestion import loaders
+from src.core.exceptions import DocumentLoadError, UnsupportedSourceError
+from src.ingestion import loaders
 
 
 def test_text_file_is_loaded_and_titled(tmp_path):

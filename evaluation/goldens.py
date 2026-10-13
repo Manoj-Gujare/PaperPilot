@@ -11,7 +11,7 @@ import json
 from dataclasses import dataclass
 from pathlib import Path
 
-from paperpilot.core.logging import get_logger
+from src.core.logging import get_logger
 
 logger = get_logger(__name__)
 

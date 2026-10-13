@@ -7,7 +7,7 @@ reverse points at chunking or the retriever. One blended score would hide which.
 
 from __future__ import annotations
 
-from paperpilot.config import get_settings
+from src.config import get_settings
 
 METRIC_THRESHOLD = 0.7
 

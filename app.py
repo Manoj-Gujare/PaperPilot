@@ -6,4 +6,4 @@ the interface itself inside the package where it can be imported and tested.
 
 import runpy
 
-runpy.run_module("paperpilot.ui.app", run_name="__main__")
+runpy.run_module("src.ui.app", run_name="__main__")

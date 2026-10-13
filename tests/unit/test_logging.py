@@ -4,7 +4,7 @@ from __future__ import annotations
 
 import logging
 
-from paperpilot.core.logging import configure_logging, get_logger
+from src.core.logging import configure_logging, get_logger
 
 
 def test_configure_logging_attaches_a_single_handler():
@@ -16,7 +16,7 @@ def test_configure_logging_attaches_a_single_handler():
 
 
 def test_logger_names_are_namespaced():
-    assert get_logger("paperpilot.ingestion").name == "paperpilot.ingestion"
+    assert get_logger("src.ingestion").name == "paperpilot.ingestion"
     assert get_logger("ingestion").name == "paperpilot.ingestion"
 
 

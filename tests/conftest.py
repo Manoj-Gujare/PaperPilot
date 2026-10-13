@@ -31,7 +31,7 @@ def stub_environment(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> Iterato
     monkeypatch.setenv("CHECKPOINT_DB_PATH", str(tmp_path / "data" / "checkpoints.db"))
     monkeypatch.setenv("SESSIONS_FILE", str(tmp_path / "data" / "sessions.json"))
 
-    from paperpilot.config.settings import get_settings
+    from src.config.settings import get_settings
 
     get_settings.cache_clear()
     yield
@@ -41,7 +41,7 @@ def stub_environment(monkeypatch: pytest.MonkeyPatch, tmp_path: Path) -> Iterato
 @pytest.fixture
 def settings():
     """The cached settings instance built from the stubbed environment."""
-    from paperpilot.config.settings import get_settings
+    from src.config.settings import get_settings
 
     return get_settings()
 

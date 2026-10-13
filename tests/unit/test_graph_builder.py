@@ -4,7 +4,7 @@ from __future__ import annotations
 
 from langchain_core.messages import HumanMessage
 
-from paperpilot.graph import build_graph, initial_state
+from src.graph import build_graph, initial_state
 
 EXPECTED_NODES = {
     "router",

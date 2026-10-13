@@ -15,11 +15,11 @@ from uuid import uuid4
 
 from evaluation.goldens import Golden, load_or_generate
 from evaluation.metrics import METRIC_THRESHOLD, build_metrics
-from paperpilot.config import get_settings
-from paperpilot.core.logging import configure_logging, get_logger
-from paperpilot.graph import build_graph, initial_state
-from paperpilot.ingestion import load_document
-from paperpilot.retrieval import get_repository
+from src.config import get_settings
+from src.core.logging import configure_logging, get_logger
+from src.graph import build_graph, initial_state
+from src.ingestion import load_document
+from src.retrieval import get_repository
 
 logger = get_logger(__name__)
 
