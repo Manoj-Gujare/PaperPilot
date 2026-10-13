@@ -3,7 +3,7 @@
 from __future__ import annotations
 
 from langchain_core.documents import Document
-from langchain_core.messages import AIMessage, HumanMessage, ToolMessage
+from langchain_core.messages import AIMessage, AIMessageChunk, HumanMessage, ToolMessage
 
 from src.services.chat_service import ChatService, serialise_state
 
@@ -27,7 +27,7 @@ class FakeGraph:
 
 
 def chunk(content, node):
-    return type("Chunk", (), {"content": content})(), {"langgraph_node": node}
+    return AIMessageChunk(content=content), {"langgraph_node": node}
 
 
 def test_only_answer_node_tokens_are_streamed():
@@ -37,6 +37,18 @@ def test_only_answer_node_tokens_are_streamed():
             chunk("Hel", "generate_answer"),
             chunk("grader noise", "relevancy_check"),
             chunk("lo", "generate_answer"),
+        ]
+    )
+    assert "".join(ChatService(graph=graph).stream_answer("q", "s1")) == "Hello"
+
+
+def test_the_finished_message_is_not_streamed_twice():
+    """The messages stream also carries the AIMessage the node writes to state."""
+    graph = FakeGraph(
+        chunks=[
+            chunk("Hel", "generate_answer"),
+            chunk("lo", "generate_answer"),
+            (AIMessage(content="Hello"), {"langgraph_node": "generate_answer"}),
         ]
     )
     assert "".join(ChatService(graph=graph).stream_answer("q", "s1")) == "Hello"

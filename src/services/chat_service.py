@@ -13,6 +13,7 @@ from functools import lru_cache
 from typing import Any
 
 from langchain_core.documents import Document
+from langchain_core.messages import AIMessageChunk
 from langgraph.graph.state import CompiledStateGraph
 
 from src.core.logging import get_logger
@@ -51,7 +52,9 @@ class ChatService:
 
         Only tokens emitted by the answer node are yielded: the router, the
         grader and the rewriter also call the model, and surfacing their output
-        would show the user the machinery instead of the answer.
+        would show the user the machinery instead of the answer. Only token
+        chunks count: the stream also replays the finished ``AIMessage`` the
+        node writes to state, and yielding it would print the answer twice.
         """
         for chunk, metadata in self.graph.stream(
             initial_state(query, session_id),
@@ -59,6 +62,8 @@ class ChatService:
             stream_mode="messages",
         ):
             if metadata.get("langgraph_node") != ANSWER_NODE:
+                continue
+            if not isinstance(chunk, AIMessageChunk):
                 continue
             content = getattr(chunk, "content", None)
             if content:
